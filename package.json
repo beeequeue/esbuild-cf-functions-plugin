@@ -1,5 +1,6 @@
 {
   "name": "esbuild-cf-functions-plugin",
+  "description": "A plugin to configure ESBuild for building code compatible with CloudFront Functions",
   "version": "0.0.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
@@ -33,10 +34,13 @@
     "test": "vitest run",
     "test:dev": "vitest",
     "typecheck": "tsc --noEmit --project tsconfig.json",
+    "release": "pnpm build && pnpm changeset publish",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "0.6.0",
+    "@changesets/changelog-github": "0.4.5",
+    "@changesets/cli": "2.23.0",
     "@tsconfig/node16": "1.0.2",
     "@types/node": "16.11.41",
     "c8": "7.11.3",
