@@ -1,3 +1,4 @@
+import { formatMessages } from "esbuild"
 import type { Plugin } from "esbuild"
 
 // https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
@@ -18,7 +19,7 @@ const config = {
 export const CloudFrontFunctionsPlugin = (): Plugin => ({
   name: "cloudfront",
 
-  setup: (build) => {
+  setup: async (build) => {
     build.initialOptions.target = "es5"
     build.initialOptions.format = "esm"
 
@@ -32,6 +33,22 @@ export const CloudFrontFunctionsPlugin = (): Plugin => ({
     build.initialOptions.supported = {
       ...config,
       ...build.initialOptions.supported,
+    }
+
+    if (build.initialOptions.platform != null) {
+      ;(
+        await formatMessages(
+          [
+            {
+              text: `'platform' has been set: '${build.initialOptions.platform}'\n  CloudFront Functions run on a platform that is neither 'node' or 'browser', so configuring your code to build for them is pointless.`,
+            },
+          ],
+          {
+            color: true,
+            kind: "warning",
+          },
+        )
+      ).forEach((msg) => console.log(msg))
     }
   },
 })
