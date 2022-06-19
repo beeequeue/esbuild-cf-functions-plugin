@@ -1,17 +1,15 @@
 # `esbuild-cf-functions-plugin`
 
-<!--
-[![npm](https://img.shields.io/npm/v/NAME_HERE)](https://www.npmjs.com/package/NAME_HERE)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/NAME_HERE)
-![node-current](https://img.shields.io/node/v/NAME_HERE)
-[![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/NAME_HERE?token=TOKEN_HERE)](https://app.codecov.io/github/BeeeQueue/NAME_HERE)
--->
+[![npm](https://img.shields.io/npm/v/esbuild-cf-functions-plugin)](https://www.npmjs.com/package/esbuild-cf-functions-plugin)
+![node-current](https://img.shields.io/node/v/esbuild-cf-functions-plugin)
+![esbuild-current](https://img.shields.io/badge/esbuild-^0.14.46-green)
+[![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/esbuild-cf-functions-plugin?token=TOKEN_HERE)](https://app.codecov.io/github/BeeeQueue/esbuild-cf-functions-plugin)
 
 This plugin configures ESBuild for building code [compatible][runtime] with [CloudFront Functions][cf-functions].
 
-As can be seen in the documentation CloudFront Functions do not run on Node, but on AWS's custom JS runtime.
+As can be seen in the documentation, CloudFront Functions do not run on Node, but on AWS's custom JS runtime.
 
-According to them it
+According to them, it
 
 > ... is compliant with ECMAScript (ES) version 5.1 and also supports some features of ES versions 6 through 9.
 
