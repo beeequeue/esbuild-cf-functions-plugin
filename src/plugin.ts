@@ -22,6 +22,13 @@ export const CloudFrontFunctionsPlugin = (): Plugin => ({
     build.initialOptions.target = "es5"
     build.initialOptions.format = "cjs"
 
+    if (build.initialOptions.minify) {
+      build.initialOptions.minify = false
+      build.initialOptions.minifyIdentifiers = false
+      build.initialOptions.minifyWhitespace = true
+      build.initialOptions.minifySyntax = true
+    }
+
     build.initialOptions.supported = {
       ...config,
       ...build.initialOptions.supported,
