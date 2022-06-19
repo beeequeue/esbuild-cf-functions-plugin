@@ -17,7 +17,10 @@ According to them it
 
 This plugin does its best to enable and disable transpiling features as the [documentation says is available][runtime].
 
-## Installation
+## Usage
+
+<details>
+  <summary>Installation</summary>
 
 ```shell
 npm i -D esbuild-cf-functions-plugin
@@ -31,7 +34,7 @@ pnpm i -D esbuild-cf-functions-plugin
 yarn add -D esbuild-cf-functions-plugin
 ```
 
-## Usage
+</details>
 
 ```js
 // build.mjs
