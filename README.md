@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/esbuild-cf-functions-plugin)](https://www.npmjs.com/package/esbuild-cf-functions-plugin)
 ![node-current](https://img.shields.io/node/v/esbuild-cf-functions-plugin)
 ![esbuild-current](https://img.shields.io/badge/esbuild-^0.14.46-green)
-[![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/esbuild-cf-functions-plugin?token=TOKEN_HERE)](https://app.codecov.io/github/BeeeQueue/esbuild-cf-functions-plugin)
+[![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/esbuild-cf-functions-plugin?token=S8W0PQDUQ1)](https://app.codecov.io/github/BeeeQueue/esbuild-cf-functions-plugin)
 
 This plugin configures ESBuild for building code [compatible][runtime] with [CloudFront Functions][cf-functions].
 

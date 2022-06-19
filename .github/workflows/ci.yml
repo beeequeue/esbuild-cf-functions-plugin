@@ -97,6 +97,7 @@ jobs:
         with:
           files: node_modules/.coverage/lcov.info
           fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
