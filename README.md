@@ -1,4 +1,4 @@
-# Minimal Node/Web Project
+# `esbuild-cf-functions-plugin`
 
 <!--
 [![npm](https://img.shields.io/npm/v/NAME_HERE)](https://www.npmjs.com/package/NAME_HERE)
@@ -7,7 +7,57 @@
 [![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/NAME_HERE?token=TOKEN_HERE)](https://app.codecov.io/github/BeeeQueue/NAME_HERE)
 -->
 
+This plugin configures ESBuild for building code [compatible][runtime] with [CloudFront Functions][cf-functions].
+
+As can be seen in the documentation CloudFront Functions do not run on Node, but on AWS's custom JS runtime.
+It according to them
+
+```
+... is compliant with ECMAScript (ES) version 5.1 and also supports some features of ES versions 6 through 9.
+```
+
+This plugin does its best to enable and disable transpiling features as the [documentation says is available][runtime].
+
+## Installation
+
+```shell
+npm i -D esbuild-cf-functions-plugin
+```
+
+```shell
+pnpm i -D esbuild-cf-functions-plugin
+```
+
+```shell
+yarn add -D esbuild-cf-functions-plugin
+```
+
+## Usage
+
+```js
+// build.mjs
+import { build } from "esbuild"
+import { CloudFrontFunctionsPlugin } from "esbuild-cf-functions-plugin"
+
+void build({
+  entryPoints: ["src/index.ts"],
+  outdir: "dist",
+
+  minify: true,
+  logLevel: "info",
+
+  plugins: [CloudFrontFunctionsPlugin()],
+})
+```
+
+_The plugin overrides the `format` and `target` options, unless I did something wrong._
+
+---
+
 Todo:
 
 - [ ] Check if destructing works
-- [ ] Check if ESM
+- [ ] Check if ESM works
+
+[cf-functions]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
+[runtime]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
