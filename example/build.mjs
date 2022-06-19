@@ -5,7 +5,7 @@ void build({
   entryPoints: ["src/handler.ts"],
   outdir: "dist",
 
-  minify: false,
+  minify: true,
   logLevel: "info",
 
   plugins: [CloudFrontFunctionsPlugin()],

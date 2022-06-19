@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "node build.mjs",
-    "deploy": ""
+    "plan": "pnpm build && terraform -chdir=infra plan",
+    "deploy": "pnpm build && terraform -chdir=infra apply"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.100",

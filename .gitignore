@@ -6,6 +6,8 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 
+.terraform
+
 .DS_Store
 .idea
 dist
