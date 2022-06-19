@@ -36,19 +36,20 @@ export const CloudFrontFunctionsPlugin = (): Plugin => ({
     }
 
     if (build.initialOptions.platform != null) {
-      ;(
-        await formatMessages(
-          [
-            {
-              text: `'platform' has been set: '${build.initialOptions.platform}'\n  CloudFront Functions run on a platform that is neither 'node' or 'browser', so configuring your code to build for them is pointless.`,
-            },
-          ],
+      const messages = await formatMessages(
+        [
           {
-            color: true,
-            kind: "warning",
+            text: `'platform' has been set: '${build.initialOptions.platform}'\n  CloudFront Functions run on a platform that is neither 'node' or 'browser', so configuring your code to build for them is pointless.`,
           },
-        )
-      ).forEach((msg) => console.log(msg))
+        ],
+        {
+          color: true,
+          kind: "warning",
+        },
+      )
+
+      // eslint-disable-next-line no-console
+      for (const msg of messages) console.log(msg)
     }
   },
 })
