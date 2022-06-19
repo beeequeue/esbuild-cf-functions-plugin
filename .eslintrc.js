@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
-  extends: ["plugin:@beequeue/base", "plugin:@beequeue/typescript"],
-  rules: {
-    "no-var": "off",
-    "no-console": "off",
-  },
+  extends: [
+    "plugin:@beequeue/base",
+    "plugin:@beequeue/node",
+    "plugin:@beequeue/typescript",
+  ],
 }

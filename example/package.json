@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "deploy": ""
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.100",
+    "esbuild-cf-functions-plugin": "workspace:*"
+  }
+}
