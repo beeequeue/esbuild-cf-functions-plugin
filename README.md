@@ -54,12 +54,5 @@ void build({
 
 _The plugin overrides the `format` and `target` options, unless I did something wrong._
 
----
-
-Todo:
-
-- [ ] Check if destructing works
-- [ ] Check if ESM works
-
 [cf-functions]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
 [runtime]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
