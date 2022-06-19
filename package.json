@@ -4,7 +4,11 @@
   "version": "0.1.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin"
+  },
+  "homepage": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin",
   "packageManager": "pnpm@7.2.0",
   "engines": {
     "node": ">=14.17"
