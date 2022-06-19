@@ -1,0 +1,31 @@
+name: tflint
+
+on:
+  push:
+    paths:
+      - example/infra/**
+  pull_request:
+    paths:
+      - example/infra/**
+
+jobs:
+  lints:
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.tflint.d/plugins
+          key: tflint-${{ hashFiles('.tflint.hcl') }}
+          restore-keys: |
+            tflint-
+
+      - uses: terraform-linters/setup-tflint@v1
+
+      - run: tflint --init
+        working-directory: example/infra
+
+      - run: tflint -f compact
+        working-directory: example/infra
