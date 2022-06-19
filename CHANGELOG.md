@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 0.1.2
+
+### Patch Changes
+
+- [`a727853`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/a72785397f7b113794c7d5bdfeb183026cf16f41) - Removed unused files from published .zip
+
 ## 0.1.1
 
 ### Patch Changes
