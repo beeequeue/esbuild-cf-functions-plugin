@@ -9,6 +9,17 @@
     "url": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin"
   },
   "homepage": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin",
+  "keywords": [
+    "aws",
+    "cloudfront",
+    "functions",
+    "function",
+    "lambda",
+    "esbuild",
+    "compiler",
+    "bundler",
+    "plugin"
+  ],
   "packageManager": "pnpm@7.2.0",
   "engines": {
     "node": ">=14.17"
