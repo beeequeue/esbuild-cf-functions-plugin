@@ -5,7 +5,7 @@
   "changelog": [
     "./changelog-formatter.js",
     {
-      "repo": "BeeeQueue/sizer"
+      "repo": "BeeeQueue/esbuild-cf-functions-plugin"
     }
   ]
 }

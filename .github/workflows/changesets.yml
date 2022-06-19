@@ -26,12 +26,16 @@ jobs:
 
       - run: corepack enable
 
+      - name: find pnpm cache path
+        id: cache
+        run: echo "::set-output name=path::$(pnpm store path)"
+
       - uses: actions/cache@v3
         with:
-          path: ~/.pnpm-store
-          key: v1-${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ${{ steps.cache.outputs.path }}
+          key: v1-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            v1-${{ runner.os }}-pnpm-
+            v1-pnpm-
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
