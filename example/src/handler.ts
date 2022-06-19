@@ -1,3 +1,5 @@
+import crypto from "crypto"
+
 import type { CloudFrontFunctionsEvent } from "aws-lambda"
 
 type Response = CloudFrontFunctionsEvent["request"] | CloudFrontFunctionsEvent["response"]
@@ -17,6 +19,9 @@ var redirects: Redirect[] = [
 function handler(event: CloudFrontFunctionsEvent): Response {
   var request = event.request
 
+  var hasher = crypto.createHash("sha1")
+  hasher.update(request.uri)
+
   var match = redirects.find((redirect) => redirect.from.test(request.uri))
   if (match) {
     return {
@@ -24,7 +29,11 @@ function handler(event: CloudFrontFunctionsEvent): Response {
       statusDescription: "Found",
       cookies: {},
       headers: {
-        location: { value: request.uri.replace(match.from, match.to) },
+        location: {
+          value: `${request.uri.replace(match.from, match.to)}?hash=${hasher.digest(
+            "hex",
+          )}`,
+        },
       },
     }
   }

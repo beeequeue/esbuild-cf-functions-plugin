@@ -21,7 +21,7 @@
 
     // Extra types
     "lib": ["es2020", "es2021"],
-    "types": []
+    "types": ["node"]
   },
 
   "include": ["src/**/*.ts"]
