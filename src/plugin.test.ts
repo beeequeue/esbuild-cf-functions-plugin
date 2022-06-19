@@ -7,7 +7,7 @@ import { nanoid } from "nanoid"
 import dedent from "ts-dedent"
 import { beforeEach, describe, expect, test, TestContext } from "vitest"
 
-import { CloudFrontPlugin } from "./plugin"
+import { CloudFrontFunctionsPlugin } from "./plugin"
 
 const getOutput = (result: BuildResult & { outputFiles: OutputFile[] }) => `
 ${Buffer.from(result.outputFiles[0].contents)
@@ -41,7 +41,7 @@ const buildFile = async (ctx: TestContext, contents: string) => {
 
   return build({
     entryPoints: [inputFilePath],
-    plugins: [CloudFrontPlugin()],
+    plugins: [CloudFrontFunctionsPlugin()],
 
     target: "es5",
     format: "esm",

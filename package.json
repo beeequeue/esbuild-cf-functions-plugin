@@ -1,12 +1,22 @@
 {
-  "name": "@beequeue/project-template",
+  "name": "esbuild-cf-functions-plugin",
   "version": "0.0.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
   "private": true,
   "packageManager": "pnpm@7.2.0",
   "engines": {
-    "node": ">=16.15"
+    "node": ">=14.17"
+  },
+  "main": "./dist/plugin.js",
+  "module": "./dist/plugin.mjs",
+  "types": "./dist/plugin.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/plugin.js",
+      "import": "./dist/plugin.mjs",
+      "types": "./dist/plugin.d.ts"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
@@ -17,8 +27,8 @@
     ]
   },
   "scripts": {
-    "dev": "dev",
-    "build": "node build.mjs",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "lint": "eslint src",
     "test": "vitest run",
     "test:dev": "vitest",
@@ -38,6 +48,7 @@
     "prettier": "2.6.2",
     "simple-git-hooks": "2.8.0",
     "ts-dedent": "2.2.0",
+    "tsup": "6.1.2",
     "typescript": "4.7.3",
     "vitest": "0.15.1"
   }

@@ -12,15 +12,9 @@ const config = {
   "rest-argument": true,
   // ES 9 named capture groups are supported.
   "regexp-named-capture-groups": true,
-  //
-  // "object-rest-spread": true,
-  //
-  // "object-rest-spread": true,
-  //
-  // "object-rest-spread": true,
 }
 
-export const CloudFrontPlugin = (): Plugin => ({
+export const CloudFrontFunctionsPlugin = (): Plugin => ({
   name: "cloudfront",
 
   setup: (build) => {
