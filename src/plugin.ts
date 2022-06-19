@@ -24,7 +24,11 @@ export const CloudFrontPlugin = (): Plugin => ({
   name: "cloudfront",
 
   setup: (build) => {
+    build.initialOptions.bundle = true
     build.initialOptions.target = "es5"
+    build.initialOptions.format = "cjs"
+
+    build.initialOptions.external = [...(build.initialOptions.external ?? []), "crypto"]
 
     build.initialOptions.supported = {
       ...config,
