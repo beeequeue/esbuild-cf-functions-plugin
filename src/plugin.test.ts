@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import { tmpdir } from "os"
 import path from "path"
 
-import { build, BuildResult, OutputFile } from "esbuild"
+import { build, BuildOptions, BuildResult, OutputFile } from "esbuild"
 import { nanoid } from "nanoid"
 import dedent from "ts-dedent"
 import { beforeEach, describe, expect, test, TestContext } from "vitest"
@@ -35,7 +35,11 @@ beforeEach(async (ctx) => {
   }
 })
 
-const buildFile = async (ctx: TestContext, contents: string) => {
+const buildFile = async (
+  ctx: TestContext,
+  contents: string,
+  extraOptions?: BuildOptions,
+) => {
   const inputFilePath = path.join(ctx.tempDirPath, "index.ts")
   await fs.writeFile(inputFilePath, dedent(contents))
 
@@ -45,6 +49,8 @@ const buildFile = async (ctx: TestContext, contents: string) => {
 
     target: "es5",
     format: "esm",
+
+    ...extraOptions,
     write: false,
   })
 }
@@ -332,5 +338,21 @@ test("does not modify crypto imports", async (ctx) => {
   expect(result.outputFiles).toBeDefined()
 
   const output = getOutput(result)
+  expect(output).toMatchSnapshot()
+})
+
+test("minification does not rename handler function", async (ctx) => {
+  const input = dedent`
+    function handler(event: Record<string, unknkown>) {
+      console.log("test")
+    }
+  `
+
+  const result = await buildFile(ctx, input, { minify: true })
+
+  expect(result.outputFiles).toBeDefined()
+
+  const output = getOutput(result)
+  expect(output).toContain("handler(event)")
   expect(output).toMatchSnapshot()
 })

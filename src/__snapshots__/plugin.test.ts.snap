@@ -154,3 +154,9 @@ var foo = (...rest) => {
 console.log(foo(\\"test\\"));
 "
 `;
+
+exports[`minification does not rename handler function 1`] = `
+"
+function handler(event){console.log(\\"test\\")}
+"
+`;
