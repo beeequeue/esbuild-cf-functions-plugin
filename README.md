@@ -7,11 +7,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/BeeeQueue/NAME_HERE?token=TOKEN_HERE)](https://app.codecov.io/github/BeeeQueue/NAME_HERE)
 -->
 
-This is my minimal template that I use for all my new projects.
+Todo:
 
-It has:
-
-- [tsup](https://tsup.egoist.sh/) for easily bundling code
-- [vitest](https://vitest.dev/) for testing
-- All the editor configurations you might need
-- Automatic code formatting on committing with prettier and simple-git-hooks
+- [ ] Check if destructing works
+- [ ] Check if ESM
