@@ -15,6 +15,8 @@ According to them, it
 
 This plugin does its best to enable and disable transpiling features as the [documentation says is available][runtime].
 
+**Check out the [example](./example)!**
+
 ## Usage
 
 <details>
