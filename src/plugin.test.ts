@@ -47,9 +47,6 @@ const buildFile = async (
     entryPoints: [inputFilePath],
     plugins: [CloudFrontFunctionsPlugin()],
 
-    target: "es5",
-    format: "esm",
-
     ...extraOptions,
     write: false,
   })
