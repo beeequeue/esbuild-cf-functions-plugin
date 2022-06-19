@@ -10,11 +10,10 @@
 This plugin configures ESBuild for building code [compatible][runtime] with [CloudFront Functions][cf-functions].
 
 As can be seen in the documentation CloudFront Functions do not run on Node, but on AWS's custom JS runtime.
-It according to them
 
-```
-... is compliant with ECMAScript (ES) version 5.1 and also supports some features of ES versions 6 through 9.
-```
+According to them it
+
+> ... is compliant with ECMAScript (ES) version 5.1 and also supports some features of ES versions 6 through 9.
 
 This plugin does its best to enable and disable transpiling features as the [documentation says is available][runtime].
 
