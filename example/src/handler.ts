@@ -1,4 +1,6 @@
-import type { CloudFrontRequestEvent, CloudFrontRequestResult } from "aws-lambda"
+import type { CloudFrontFunctionsEvent } from "aws-lambda"
+
+type Response = CloudFrontFunctionsEvent["request"] | CloudFrontFunctionsEvent["response"]
 
 type Redirect = {
   from: RegExp
@@ -13,16 +15,18 @@ var redirects: Redirect[] = [
 ]
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export var handler = (event: CloudFrontRequestEvent): CloudFrontRequestResult => {
-  var request = event.Records[0].cf.request
+function handler(event: CloudFrontFunctionsEvent): Response {
+  var request = event.request
 
   // eslint-disable-next-line @typescript-eslint/no-shadow
   var redirect = redirects.find((redirect) => redirect.from.test(request.uri))
   if (redirect) {
     return {
-      status: "302",
+      statusCode: 302,
+      statusDescription: "Found",
+      cookies: {},
       headers: {
-        location: [{ value: request.uri.replace(redirect.from, redirect.to) }],
+        location: { value: request.uri.replace(redirect.from, redirect.to) },
       },
     }
   }

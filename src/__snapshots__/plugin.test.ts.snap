@@ -76,7 +76,6 @@ var __copyProps = function(to, from, except, desc) {
 var __toESM = function(mod, isNodeMode, target) {
   return target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, \\"default\\", { value: mod, enumerable: true }) : target, mod);
 };
-
 var import_crypto = __toESM(require(\\"crypto\\"));
 var hash = import_crypto.default.createHash(\\"sha1\\");
 hash.update(\\"data\\");

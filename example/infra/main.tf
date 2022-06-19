@@ -47,6 +47,11 @@ resource "aws_cloudfront_distribution" "example" {
         forward = "none"
       }
     }
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.example.arn
+    }
   }
 
   origin {
@@ -67,6 +72,14 @@ resource "aws_cloudfront_distribution" "example" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+}
+
+resource "aws_cloudfront_function" "example" {
+  name    = "cf-functions-plugin-example"
+  comment = "Example for esbuild-cf-functions-plugin"
+
+  runtime = "cloudfront-js-1.0"
+  code    = file("${path.cwd}/dist/handler.js")
 }
 
 output "dist_url" {
