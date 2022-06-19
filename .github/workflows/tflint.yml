@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - example/infra/**
+      - .github/workflows/tflint.yml
   pull_request:
     paths:
       - example/infra/**
+      - .github/workflows/tflint.yml
 
 jobs:
   lints:
