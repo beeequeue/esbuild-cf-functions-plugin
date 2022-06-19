@@ -17,8 +17,6 @@
     // Typechecking
     "skipLibCheck": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
 
     // Extra types

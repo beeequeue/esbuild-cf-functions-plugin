@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "dev",
-    "build": "tsup",
+    "build": "node build.mjs",
     "lint": "eslint src",
     "test": "vitest run",
     "test:dev": "vitest",
@@ -30,11 +30,11 @@
     "@tsconfig/node16": "1.0.2",
     "c8": "7.11.3",
     "dotenv": "16.0.1",
+    "esbuild": "0.14.46",
     "eslint": "8.17.0",
     "lint-staged": "13.0.1",
     "prettier": "2.6.2",
     "simple-git-hooks": "2.8.0",
-    "tsup": "6.1.0",
     "typescript": "4.7.3",
     "vitest": "0.14.2"
   }
