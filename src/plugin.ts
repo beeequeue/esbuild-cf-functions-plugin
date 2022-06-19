@@ -1,5 +1,6 @@
 import type { Plugin } from "esbuild"
 
+// https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
 const config = {
   // Note: The const and let statements are not supported.
   "const-and-let": false,
