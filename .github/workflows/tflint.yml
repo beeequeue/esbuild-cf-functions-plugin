@@ -24,7 +24,7 @@ jobs:
           restore-keys: |
             tflint-
 
-      - uses: terraform-linters/setup-tflint@v1
+      - uses: terraform-linters/setup-tflint@v2
 
       - run: tflint --init
         working-directory: example/infra
