@@ -24,6 +24,10 @@
   "engines": {
     "node": ">=14.17"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "main": "./dist/plugin.js",
   "module": "./dist/plugin.mjs",
   "types": "./dist/plugin.d.ts",
