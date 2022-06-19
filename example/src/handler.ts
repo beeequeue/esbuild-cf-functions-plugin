@@ -14,19 +14,17 @@ var redirects: Redirect[] = [
   },
 ]
 
-// eslint-disable-next-line @typescript-eslint/require-await
 function handler(event: CloudFrontFunctionsEvent): Response {
   var request = event.request
 
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  var redirect = redirects.find((redirect) => redirect.from.test(request.uri))
-  if (redirect) {
+  var match = redirects.find((redirect) => redirect.from.test(request.uri))
+  if (match) {
     return {
       statusCode: 302,
       statusDescription: "Found",
       cookies: {},
       headers: {
-        location: { value: request.uri.replace(redirect.from, redirect.to) },
+        location: { value: request.uri.replace(match.from, match.to) },
       },
     }
   }
