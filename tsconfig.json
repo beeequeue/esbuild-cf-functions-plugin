@@ -20,8 +20,8 @@
     "forceConsistentCasingInFileNames": true,
 
     // Extra types
-    "lib": ["es2020"],
-    "types": []
+    "lib": ["es2020", "es2021"],
+    "types": ["node"]
   },
 
   "include": ["src/**/*.ts"]
