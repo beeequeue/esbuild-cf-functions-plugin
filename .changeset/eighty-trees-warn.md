@@ -2,4 +2,4 @@
 "esbuild-cf-functions-plugin": minor
 ---
 
-Added warning about configuring `platform`
+Added warning about various configuration options
