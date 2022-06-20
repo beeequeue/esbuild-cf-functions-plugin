@@ -20,7 +20,7 @@
     "bundler",
     "plugin"
   ],
-  "packageManager": "pnpm@7.2.0",
+  "packageManager": "pnpm@7.3.0",
   "engines": {
     "node": ">=14.17"
   },
