@@ -39,25 +39,25 @@ export const CloudFrontFunctionsPlugin = (): Plugin => ({
         })
       }
 
-      build.initialOptions.target = "es5"
-      build.initialOptions.format = "esm"
-      // If identifiers are minified `handler` will be, and will break the function
-      build.initialOptions.minifyIdentifiers = false
-
-      if (build.initialOptions.minify) {
-        build.initialOptions.minify = false
-        build.initialOptions.minifyWhitespace = true
-        build.initialOptions.minifySyntax = true
-      }
-
-      build.initialOptions.supported = {
-        ...config,
-        ...build.initialOptions.supported,
-      }
-
       return {
         warnings,
       }
     })
+
+    build.initialOptions.target = "es5"
+    build.initialOptions.format = "esm"
+    // If identifiers are minified `handler` will be, and will break the function
+    build.initialOptions.minifyIdentifiers = false
+
+    if (build.initialOptions.minify) {
+      build.initialOptions.minify = false
+      build.initialOptions.minifyWhitespace = true
+      build.initialOptions.minifySyntax = true
+    }
+
+    build.initialOptions.supported = {
+      ...config,
+      ...build.initialOptions.supported,
+    }
   },
 })
