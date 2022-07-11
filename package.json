@@ -67,7 +67,7 @@
     "@types/node": "16.11.43",
     "c8": "7.11.3",
     "dotenv": "16.0.1",
-    "esbuild": "0.14.48",
+    "esbuild": "0.14.49",
     "eslint": "8.19.0",
     "lint-staged": "13.0.3",
     "nanoid": "4.0.0",
