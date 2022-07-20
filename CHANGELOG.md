@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 0.2.0
+
+### Minor Changes
+
+- [`f8aa40b`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/f8aa40b9318e070ed497c1d2cb0e3e10af647357) - Added warning about various configuration options
+
 ## 0.1.2
 
 ### Patch Changes
