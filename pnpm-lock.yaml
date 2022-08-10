@@ -42,10 +42,10 @@ importers:
 
   example:
     specifiers:
-      '@types/aws-lambda': 8.10.101
+      '@types/aws-lambda': 8.10.102
       esbuild-cf-functions-plugin: workspace:*
     devDependencies:
-      '@types/aws-lambda': 8.10.101
+      '@types/aws-lambda': 8.10.102
       esbuild-cf-functions-plugin: link:..
 
 packages:
@@ -453,8 +453,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@types/aws-lambda/8.10.101:
-    resolution: {integrity: sha512-84geGyVc0H9P9aGbcg/vkDh5akJq0bEf3tizHNR2d1gcm0wsp9IZ/SW6rPxvgjJFi3OeVxDc8WTKCAjoZbogzg==}
+  /@types/aws-lambda/8.10.102:
+    resolution: {integrity: sha512-BT05v46n9KtSHa9SgGuOvm49eSruJ9utD8iNXpdpuUVYk8wOcqmm1LEzpNRkrXxD0CULc38sdLpk6q3Wa2WOwg==}
     dev: true
 
   /@types/chai-subset/1.3.3:
