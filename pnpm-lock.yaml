@@ -18,7 +18,7 @@ importers:
       prettier: 2.7.1
       simple-git-hooks: 2.8.0
       ts-dedent: 2.2.0
-      tsup: 6.2.1
+      tsup: 6.2.2
       typescript: 4.7.4
       vitest: 0.21.1
     devDependencies:
@@ -36,7 +36,7 @@ importers:
       prettier: 2.7.1
       simple-git-hooks: 2.8.0
       ts-dedent: 2.2.0
-      tsup: 6.2.1_typescript@4.7.4
+      tsup: 6.2.2_typescript@4.7.4
       typescript: 4.7.4
       vitest: 0.21.1_c8@7.12.0
 
@@ -847,13 +847,13 @@ packages:
       semver: 7.3.7
     dev: true
 
-  /bundle-require/3.0.4_esbuild@0.14.54:
+  /bundle-require/3.0.4_esbuild@0.15.1:
     resolution: {integrity: sha512-VXG6epB1yrLAvWVQpl92qF347/UXmncQj7J3U8kZEbdVZ1ZkQyr4hYeL/9RvcE8vVVdp53dY78Fd/3pqfRqI1A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.13'
     dependencies:
-      esbuild: 0.14.54
+      esbuild: 0.15.1
       load-tsconfig: 0.2.3
     dev: true
 
@@ -4079,8 +4079,8 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
-  /tsup/6.2.1_typescript@4.7.4:
-    resolution: {integrity: sha512-KhBhCqVA3bHrIWhkcqTUA7R69H05IcBlHEtCVLEu42XDGUzz+bDqCcfu5PwpkKJ8DqK5tpdgM/qmyk4DdUbkZw==}
+  /tsup/6.2.2_typescript@4.7.4:
+    resolution: {integrity: sha512-vJ9IAdif4GKAz2XMZzjX1hNqhBezJWXjm0qeQEoI7y//a64cxgCF8178eTMV4jBu7YNKnfAPpPSuyXW4mN+9rA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
@@ -4095,11 +4095,11 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 3.0.4_esbuild@0.14.54
+      bundle-require: 3.0.4_esbuild@0.15.1
       cac: 6.7.12
       chokidar: 3.5.3
       debug: 4.3.4
-      esbuild: 0.14.54
+      esbuild: 0.15.1
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
