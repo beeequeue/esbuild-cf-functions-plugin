@@ -64,7 +64,7 @@
     "@changesets/changelog-github": "0.4.6",
     "@changesets/cli": "2.24.3",
     "@tsconfig/node16": "1.0.3",
-    "@types/node": "16.11.51",
+    "@types/node": "16.11.52",
     "c8": "7.12.0",
     "dotenv": "16.0.1",
     "esbuild": "0.15.5",
