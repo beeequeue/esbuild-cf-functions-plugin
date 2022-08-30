@@ -62,7 +62,7 @@
   "devDependencies": {
     "@beequeue/eslint-plugin": "0.7.0",
     "@changesets/changelog-github": "0.4.6",
-    "@changesets/cli": "2.24.3",
+    "@changesets/cli": "2.24.4",
     "@tsconfig/node16": "1.0.3",
     "@types/node": "16.11.56",
     "c8": "7.12.0",
