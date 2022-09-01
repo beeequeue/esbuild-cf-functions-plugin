@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 0.2.1
+
+### Patch Changes
+
+- [#65](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/pull/65) [`7c672fe`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/7c672fefd3e70f05b2a58dea1736f52364b7dab3) Thanks [@renovate](https://github.com/apps/renovate)! - Added esbuild@^0.15 to allowed peer dependencies.
+
 ## 0.2.0
 
 ### Minor Changes
