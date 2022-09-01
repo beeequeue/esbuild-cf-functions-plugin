@@ -56,6 +56,9 @@
     "release": "pnpm build && pnpm changeset publish",
     "prepare": "simple-git-hooks"
   },
+  "resolutions": {
+    "esbuild": "0.15.6"
+  },
   "peerDependencies": {
     "esbuild": "^0.14.46 || ^0.15.0"
   },
@@ -65,7 +68,7 @@
     "@changesets/cli": "2.24.4",
     "@tsconfig/node16": "1.0.3",
     "@types/node": "16.11.56",
-    "c8": "7.12.0",
+    "@vitest/coverage-c8": "0.22.1",
     "dotenv": "16.0.2",
     "esbuild": "0.15.6",
     "eslint": "8.23.0",
@@ -76,6 +79,6 @@
     "ts-dedent": "2.2.0",
     "tsup": "6.2.3",
     "typescript": "4.8.2",
-    "vitest": "0.21.1"
+    "vitest": "0.22.1"
   }
 }
