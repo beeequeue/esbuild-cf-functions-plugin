@@ -57,7 +57,7 @@
     "prepare": "simple-git-hooks"
   },
   "resolutions": {
-    "esbuild": "0.15.6"
+    "esbuild": "0.15.7"
   },
   "peerDependencies": {
     "esbuild": "^0.14.46 || ^0.15.0"
@@ -70,7 +70,7 @@
     "@types/node": "16.11.56",
     "@vitest/coverage-c8": "0.22.1",
     "dotenv": "16.0.2",
-    "esbuild": "0.15.6",
+    "esbuild": "0.15.7",
     "eslint": "8.23.0",
     "lint-staged": "13.0.3",
     "nanoid": "4.0.0",
