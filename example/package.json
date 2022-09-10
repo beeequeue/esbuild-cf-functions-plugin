@@ -9,7 +9,7 @@
     "plan": "pnpm build && terraform -chdir=infra plan"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.102",
+    "@types/aws-lambda": "8.10.103",
     "esbuild-cf-functions-plugin": "workspace:*"
   }
 }
