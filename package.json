@@ -68,7 +68,7 @@
     "@changesets/cli": "2.24.4",
     "@tsconfig/node16": "1.0.3",
     "@types/node": "16.11.56",
-    "@vitest/coverage-c8": "0.22.1",
+    "@vitest/coverage-c8": "0.23.2",
     "dotenv": "16.0.2",
     "esbuild": "0.15.7",
     "eslint": "8.23.0",
