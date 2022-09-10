@@ -2,6 +2,8 @@ name: tflint
 
 on:
   push:
+    branches:
+      - main
     paths:
       - example/infra/**
       - .github/workflows/tflint.yml
@@ -20,9 +22,9 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ~/.tflint.d/plugins
-          key: tflint-${{ hashFiles('.tflint.hcl') }}
+          key: tflint-v2-${{ hashFiles('.tflint.hcl') }}
           restore-keys: |
-            tflint-
+            tflint-v2-
 
       - uses: terraform-linters/setup-tflint@v2
 
