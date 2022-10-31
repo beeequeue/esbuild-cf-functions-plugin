@@ -20,7 +20,7 @@
     "bundler",
     "plugin"
   ],
-  "packageManager": "pnpm@7.14.0",
+  "packageManager": "pnpm@7.14.1",
   "engines": {
     "node": ">=14.17"
   },
@@ -65,9 +65,9 @@
   "devDependencies": {
     "@beequeue/eslint-plugin": "0.8.0",
     "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.25.0",
+    "@changesets/cli": "2.25.1",
     "@tsconfig/node16": "1.0.3",
-    "@types/node": "16.18.0",
+    "@types/node": "16.18.3",
     "@vitest/coverage-c8": "0.24.3",
     "dotenv": "16.0.3",
     "esbuild": "0.15.12",
