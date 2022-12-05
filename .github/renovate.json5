@@ -12,10 +12,6 @@
       automerge: true,
     },
     {
-      packagePatterns: ["lint", "!lint-staged"],
-      groupName: "Linting",
-    },
-    {
       matchManagers: ["terraform", "terraform-version"],
       groupName: "Terraform",
     },
