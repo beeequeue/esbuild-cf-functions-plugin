@@ -20,7 +20,7 @@
     "bundler",
     "plugin"
   ],
-  "packageManager": "pnpm@7.18.0",
+  "packageManager": "pnpm@7.18.1",
   "engines": {
     "node": ">=14.17"
   },
@@ -57,28 +57,28 @@
     "prepare": "simple-git-hooks"
   },
   "resolutions": {
-    "esbuild": "0.15.18"
+    "esbuild": "0.16.4"
   },
   "peerDependencies": {
-    "esbuild": "^0.14.46 || ^0.15.0"
+    "esbuild": "^0.14.46 || ^0.15.0 || ^0.16.0"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "1.1.0",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2",
     "@tsconfig/node16": "1.0.3",
-    "@types/node": "16.18.4",
-    "@vitest/coverage-c8": "0.25.3",
+    "@types/node": "16.18.8",
+    "@vitest/coverage-c8": "0.25.7",
     "dotenv": "16.0.3",
-    "esbuild": "0.15.18",
+    "esbuild": "0.16.4",
     "eslint": "8.29.0",
     "lint-staged": "13.1.0",
     "nanoid": "4.0.0",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "simple-git-hooks": "2.8.1",
     "ts-dedent": "2.2.0",
     "tsup": "6.5.0",
-    "typescript": "4.9.3",
-    "vitest": "0.25.3"
+    "typescript": "4.9.4",
+    "vitest": "0.25.7"
   }
 }
