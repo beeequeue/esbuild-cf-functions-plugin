@@ -60,7 +60,7 @@
     "esbuild": "0.17.7"
   },
   "peerDependencies": {
-    "esbuild": "^0.14.46 || ^0.15.0 || ^0.16.0 || ^0.17.0"
+    "esbuild": ">=0.14.46"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "1.1.2",
