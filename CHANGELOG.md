@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 0.2.2
+
+### Patch Changes
+
+- [`fb624de`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/fb624de5ca30bafcbf8056435169a8ec9690fdd9) - Relaxed esbuild version restriction to >=0.14.46
+
 ## 0.2.1
 
 ### Patch Changes
