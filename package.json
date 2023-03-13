@@ -20,7 +20,7 @@
     "bundler",
     "plugin"
   ],
-  "packageManager": "pnpm@7.29.0",
+  "packageManager": "pnpm@7.29.1",
   "engines": {
     "node": ">=14.17"
   },
@@ -71,8 +71,8 @@
     "@vitest/coverage-c8": "0.29.2",
     "dotenv": "16.0.3",
     "esbuild": "0.17.11",
-    "eslint": "8.35.0",
-    "lint-staged": "13.1.2",
+    "eslint": "8.36.0",
+    "lint-staged": "13.2.0",
     "nanoid": "4.0.1",
     "prettier": "2.8.4",
     "simple-git-hooks": "2.8.1",
