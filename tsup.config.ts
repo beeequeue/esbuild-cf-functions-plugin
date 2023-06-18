@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
-  entryPoints: ["src/plugin.ts"],
+  entry: ["src/plugin.ts"],
 
   clean: true,
   minify: true,
