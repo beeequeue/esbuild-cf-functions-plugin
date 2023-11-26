@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 1.0.0
+
+### Major Changes
+
+- [#130](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/pull/130) [`ff66646`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/ff666461fa95f2554fd2d0d5a7c922e8cdcead2a) - Dropped node versions <17, now requires 18+.
+
 ## 0.2.2
 
 ### Patch Changes
