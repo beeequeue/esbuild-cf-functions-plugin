@@ -21,7 +21,6 @@
     "forceConsistentCasingInFileNames": true,
 
     // Extra types
-    "lib": ["es2020", "es2021"],
     "types": ["node"]
   },
 

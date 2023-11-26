@@ -6,6 +6,7 @@ export default defineConfig({
 
     coverage: {
       enabled: true,
+      include: ["src/**/*"],
       reporter: ["text", "lcov"],
       reportsDirectory: "node_modules/.coverage",
     },
