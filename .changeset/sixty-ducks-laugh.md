@@ -2,4 +2,4 @@
 "esbuild-cf-functions-plugin": major
 ---
 
-Require node 16.
+Dropped node versions <17, now requires 18+.

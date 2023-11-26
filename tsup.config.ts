@@ -8,7 +8,7 @@ export default defineConfig({
   splitting: false,
 
   platform: "node",
-  target: "node16",
+  target: "node18",
   format: ["cjs", "esm"],
   sourcemap: true,
   dts: true,
