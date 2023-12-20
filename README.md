@@ -13,7 +13,7 @@ According to them, it
 
 > ... is compliant with ECMAScript (ES) version 5.1 and also supports some features of ES versions 6 through 9.
 
-This plugin does its best to enable and disable transpiling features as the [documentation says is available][runtime].
+This plugin does its best to enable and disable transpiling features as the documentation says is available for the [v1 runtime][runtime] and [v2 runtime][runtime-v2]. By default the v1 runtime is assumed.
 
 **Check out the [example](./example)!**
 
@@ -52,7 +52,26 @@ void build({
 })
 ```
 
+To enable v2 runtime features:
+
+```js
+// build.mjs
+import { build } from "esbuild"
+import { CloudFrontFunctionsPlugin } from "esbuild-cf-functions-plugin"
+
+void build({
+  entryPoints: ["src/index.ts"],
+  outdir: "dist",
+
+  minify: true,
+  logLevel: "info",
+
+  plugins: [CloudFrontFunctionsPlugin({ runtimeVersion: 2 })],
+})
+```
+
 _The plugin overrides the `format` and `target` options, unless I did something wrong._
 
 [cf-functions]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
 [runtime]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
+[runtime-v2]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-20.html
