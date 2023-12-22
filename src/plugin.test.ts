@@ -39,7 +39,7 @@ const buildFile = async (
   ctx: TestContext,
   contents: string,
   extraOptions?: BuildOptions,
-  runtimeVersion?,
+  runtimeVersion?: 1 | 2,
 ) => {
   const inputFilePath = path.join(ctx.tempDirPath, "index.ts")
   await fs.writeFile(inputFilePath, dedent(contents))
