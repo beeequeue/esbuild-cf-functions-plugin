@@ -2,7 +2,7 @@ import { formatMessages, PartialMessage } from "esbuild"
 import type { Plugin } from "esbuild"
 
 // https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
-const config = {
+const supportedV1 = {
   // Note: The const and let statements are not supported.
   "const-and-let": false,
   // The ES 7 exponentiation operator (**) is supported.
@@ -16,7 +16,25 @@ const config = {
   "regexp-named-capture-groups": true,
 }
 
-export const CloudFrontFunctionsPlugin = (): Plugin => ({
+const supportedV2 = {
+  ...supportedV1,
+  // Const and let statements are supported in v2.
+  "const-and-let": true,
+  // ES 6 await expressions are supported in v2.
+  "async-await": true,
+}
+
+export type PluginConfig = {
+  /**
+   * CloudFront Functions JavaScript runtime environment version to build for
+   *
+   * @default 1
+   */
+  runtimeVersion?: 1 | 2
+}
+export const CloudFrontFunctionsPlugin = ({
+  runtimeVersion,
+}: PluginConfig = {}): Plugin => ({
   name: "cloudfront",
 
   setup: (build) => {
@@ -56,7 +74,7 @@ export const CloudFrontFunctionsPlugin = (): Plugin => ({
     }
 
     build.initialOptions.supported = {
-      ...config,
+      ...(runtimeVersion === 2 ? supportedV2 : supportedV1),
       ...build.initialOptions.supported,
     }
   },

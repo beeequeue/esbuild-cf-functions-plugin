@@ -1,20 +1,20 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`allows exponent operator 1`] = `
+exports[`runtimeVersion 1 > allows exponent operator 1`] = `
 "
 var foo = 2 ** 2;
 console.log(foo);
 "
 `;
 
-exports[`allows template strings 1`] = `
+exports[`runtimeVersion 1 > allows template strings 1`] = `
 "
 var foo = \`Hello\`;
 var bar = \`\${foo}\`;
 "
 `;
 
-exports[`arrays > does not modify supported functions 1`] = `
+exports[`runtimeVersion 1 > arrays > does not modify supported functions 1`] = `
 "
 var foo = Array.of(1, 2, 3);
 var foo = [].copyWithin(10, 0, 2);
@@ -25,7 +25,7 @@ var foo = [].includes("1");
 "
 `;
 
-exports[`arrays > does not modify supported typed arrays 1`] = `
+exports[`runtimeVersion 1 > arrays > does not modify supported typed arrays 1`] = `
 "
 var foo = new Int8Array([1, 2, 3]);
 var foo = new Uint8Array([1, 2, 3]);
@@ -47,14 +47,14 @@ var foo = new Float64Array([1, 2, 3]).toString();
 "
 `;
 
-exports[`const, let, var > lets vars through 1`] = `
+exports[`runtimeVersion 1 > const, let, var > lets vars through 1`] = `
 "
 var foo = "bar";
 console.log(foo);
 "
 `;
 
-exports[`does not modify crypto imports 1`] = `
+exports[`runtimeVersion 1 > does not modify crypto imports 1`] = `
 "
 import crypto from "crypto";
 var hash = crypto.createHash("sha1");
@@ -63,14 +63,14 @@ hash.digest("base64");
 "
 `;
 
-exports[`does not modify named capture groups 1`] = `
+exports[`runtimeVersion 1 > does not modify named capture groups 1`] = `
 "
 var regex = /(?<foo>.*+)/;
 var matches = regex.exec("Hello world");
 "
 `;
 
-exports[`does not modify supported functions 1`] = `
+exports[`runtimeVersion 1 > does not modify supported functions 1`] = `
 "
 var foo = String.fromCodePoint(12);
 var foo = "bar".codePointAt(0);
@@ -85,7 +85,7 @@ var foo = "bar".trimEnd();
 "
 `;
 
-exports[`does not modify supported functions 2`] = `
+exports[`runtimeVersion 1 > does not modify supported functions 2`] = `
 "
 var foo = Number.isFinite(10);
 var foo = Number.isInteger(10);
@@ -107,7 +107,7 @@ var foo = 10 .toPrecision(10);
 "
 `;
 
-exports[`does not modify supported functions 3`] = `
+exports[`runtimeVersion 1 > does not modify supported functions 3`] = `
 "
 new Promise((resolve, reject) => resolve());
 new Promise((resolve, reject) => reject());
@@ -117,7 +117,7 @@ new Promise((resolve, reject) => reject()).finally(console.log);
 "
 `;
 
-exports[`functions > allows arrow functions 1`] = `
+exports[`runtimeVersion 1 > functions > allows arrow functions 1`] = `
 "
 var foo = () => {
   return true;
@@ -126,7 +126,7 @@ console.log(foo());
 "
 `;
 
-exports[`functions > allows spread parameters 1`] = `
+exports[`runtimeVersion 1 > functions > allows spread parameters 1`] = `
 "
 var foo = (...rest) => {
   return rest[0];
@@ -135,7 +135,216 @@ console.log(foo("test"));
 "
 `;
 
-exports[`minification does not rename handler function 1`] = `
+exports[`runtimeVersion 1 > minification does not rename handler function 1`] = `
+"
+function handler(event){console.log("test")}
+"
+`;
+
+exports[`runtimeVersion 2 > allows await/async 1`] = `
+"
+void (async () => {
+  var func = async () => true;
+  var result = await func();
+})();
+"
+`;
+
+exports[`runtimeVersion 2 > allows exponent operator 1`] = `
+"
+var foo = 2 ** 2;
+console.log(foo);
+"
+`;
+
+exports[`runtimeVersion 2 > allows template strings 1`] = `
+"
+var foo = \`Hello\`;
+var bar = \`\${foo}\`;
+"
+`;
+
+exports[`runtimeVersion 2 > arrays > does not modify supported functions 1`] = `
+"
+var foo = Array.of(1, 2, 3);
+var foo = [].copyWithin(10, 0, 2);
+var foo = [].fill("foo", 0, 20);
+var foo = [].find(() => true);
+var foo = [].findIndex(() => true);
+var foo = [].includes("1");
+"
+`;
+
+exports[`runtimeVersion 2 > arrays > does not modify supported typed arrays 1`] = `
+"
+var foo = new Int8Array([1, 2, 3]);
+var foo = new Uint8Array([1, 2, 3]);
+var foo = new Uint8ClampedArray([1, 2, 3]);
+var foo = new Int16Array([1, 2, 3]);
+var foo = new Uint16Array([1, 2, 3]);
+var foo = new Int32Array([1, 2, 3]);
+var foo = new Uint32Array([1, 2, 3]);
+var foo = new Float32Array([1, 2, 3]);
+var foo = new Float64Array([1, 2, 3]);
+var foo = new Float64Array([1, 2, 3]);
+var foo = new Float64Array([1, 2, 3]).copyWithin(10, 0, 2);
+var foo = new Float64Array([1, 2, 3]).fill(1, 20);
+var foo = new Float64Array([1, 2, 3]).join("\\n");
+new Float64Array([1, 2, 3]).set([1, 2, 3]);
+var foo = new Float64Array([1, 2, 3]).slice(0, 1);
+var foo = new Float64Array([1, 2, 3]).subarray(0, 1);
+var foo = new Float64Array([1, 2, 3]).toString();
+"
+`;
+
+exports[`runtimeVersion 2 > const, let, var > lets const through 1`] = `
+"
+const foo = "bar";
+console.log(foo);
+"
+`;
+
+exports[`runtimeVersion 2 > const, let, var > lets let through 1`] = `
+"
+let foo = "bar";
+console.log(foo);
+"
+`;
+
+exports[`runtimeVersion 2 > const, let, var > lets vars through 1`] = `
+"
+var foo = "bar";
+console.log(foo);
+"
+`;
+
+exports[`runtimeVersion 2 > does not atob and btoa  1`] = `
+"
+atob(btao("Hello World"));
+"
+`;
+
+exports[`runtimeVersion 2 > does not atob and btoa functions 1`] = `
+"
+atob(btao("Hello World"));
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify atob and btoa functions 1`] = `
+"
+atob(btao("Hello World"));
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify buffer imports 1`] = `
+"
+import buffer from "buffer";
+var b = buffer.from("aString", "utf8");
+b.toString("utf8");
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify buffer imports 2`] = `
+"
+import buffer from "buffer";
+var b = buffer.from("aString", "utf8");
+b.toString("utf8");
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify crypto imports 1`] = `
+"
+import crypto from "crypto";
+var hash = crypto.createHash("sha1");
+hash.update("data");
+hash.digest("base64");
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify named capture groups 1`] = `
+"
+var regex = /(?<foo>.*+)/;
+var matches = regex.exec("Hello world");
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify supported Promise functions 1`] = `
+"
+new Promise((resolve, reject) => resolve());
+new Promise((resolve, reject) => reject());
+new Promise((resolve, reject) => reject()).catch(console.log);
+new Promise((resolve, reject) => reject()).then(console.log);
+new Promise((resolve, reject) => reject()).finally(console.log);
+Promise.all([new Promise((resolve, reject) => resolve())]);
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify supported functions 1`] = `
+"
+var foo = String.fromCodePoint(12);
+var foo = "bar".codePointAt(0);
+var foo = "bar".includes("ar");
+var foo = "bar".startsWith("ba");
+var foo = "bar".endsWith("ar");
+var foo = "bar".repeat(2);
+var foo = "bar".padStart(10);
+var foo = "bar".padEnd(10);
+var foo = "bar".trimStart();
+var foo = "bar".trimEnd();
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify supported functions 2`] = `
+"
+var foo = Number.isFinite(10);
+var foo = Number.isInteger(10);
+var foo = Number.isNaN(10);
+var foo = Number.isSafeInteger(10);
+var foo = Number.parseFloat("10.0");
+var foo = Number.parseInt("10");
+var foo = Number.EPSILON;
+var foo = Number.MAX_SAFE_INTEGER;
+var foo = Number.MAX_VALUE;
+var foo = Number.MIN_SAFE_INTEGER;
+var foo = Number.MIN_VALUE;
+var foo = Number.NEGATIVE_INFINITY;
+var foo = Number.NaN;
+var foo = Number.POSITIVE_INFINITY;
+var foo = 10 .toExponential();
+var foo = 10 .toFixed();
+var foo = 10 .toPrecision(10);
+"
+`;
+
+exports[`runtimeVersion 2 > does not modify supported functions 3`] = `
+"
+new Promise((resolve, reject) => resolve());
+new Promise((resolve, reject) => reject());
+new Promise((resolve, reject) => reject()).catch(console.log);
+new Promise((resolve, reject) => reject()).then(console.log);
+new Promise((resolve, reject) => reject()).finally(console.log);
+"
+`;
+
+exports[`runtimeVersion 2 > functions > allows arrow functions 1`] = `
+"
+var foo = () => {
+  return true;
+};
+console.log(foo());
+"
+`;
+
+exports[`runtimeVersion 2 > functions > allows spread parameters 1`] = `
+"
+var foo = (...rest) => {
+  return rest[0];
+};
+console.log(foo("test"));
+"
+`;
+
+exports[`runtimeVersion 2 > minification does not rename handler function 1`] = `
 "
 function handler(event){console.log("test")}
 "
