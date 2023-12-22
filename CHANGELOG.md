@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 1.1.0
+
+### Minor Changes
+
+- [#154](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/pull/154) [`a334de0`](https://github.com/BeeeQueue/esbuild-cf-functions-plugin/commit/a334de0f207f6bfc6df3b7d1f52cfb67d629f71a) Thanks [@erikfried](https://github.com/erikfried)! - Added support for the Cloudfront Function 2.0 runtime
+
 ## 1.0.0
 
 ### Major Changes
