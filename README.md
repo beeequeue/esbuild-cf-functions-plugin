@@ -55,19 +55,7 @@ void build({
 To enable v2 runtime features:
 
 ```js
-// build.mjs
-import { build } from "esbuild"
-import { CloudFrontFunctionsPlugin } from "esbuild-cf-functions-plugin"
-
-void build({
-  entryPoints: ["src/index.ts"],
-  outdir: "dist",
-
-  minify: true,
-  logLevel: "info",
-
   plugins: [CloudFrontFunctionsPlugin({ runtimeVersion: 2 })],
-})
 ```
 
 _The plugin overrides the `format` and `target` options, unless I did something wrong._
