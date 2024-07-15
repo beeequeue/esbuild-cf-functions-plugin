@@ -21,7 +21,7 @@ importers:
     devDependencies:
       '@beequeue/eslint-plugin':
         specifier: 4.0.1
-        version: 4.0.1(eslint@8.57.0)(prettier@3.3.2)(typescript@5.5.3)
+        version: 4.0.1(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)
       '@changesets/changelog-github':
         specifier: 0.5.0
         version: 0.5.0
@@ -50,8 +50,8 @@ importers:
         specifier: 5.0.7
         version: 5.0.7
       prettier:
-        specifier: 3.3.2
-        version: 3.3.2
+        specifier: 3.3.3
+        version: 3.3.3
       simple-git-hooks:
         specifier: 2.11.1
         version: 2.11.1
@@ -71,8 +71,8 @@ importers:
   example:
     devDependencies:
       '@types/aws-lambda':
-        specifier: 8.10.140
-        version: 8.10.140
+        specifier: 8.10.141
+        version: 8.10.141
       esbuild-cf-functions-plugin:
         specifier: workspace:*
         version: link:..
@@ -628,8 +628,8 @@ packages:
   '@tsconfig/node18@18.2.4':
     resolution: {integrity: sha512-5xxU8vVs9/FNcvm3gE07fPbn9tl6tqGGWA9tSlwsUEkBxtRnTsNmwrV8gasZ9F/EobaSv9+nu8AxUKccw77JpQ==}
 
-  '@types/aws-lambda@8.10.140':
-    resolution: {integrity: sha512-4Dh3dk2TUcbdfHrX0Al90mNGJDvA9NBiTQPzbrjGi/dLxzKCGOYgT8YQ47jUKNFALkAJAadifq0pzyjIUlhVhg==}
+  '@types/aws-lambda@8.10.141':
+    resolution: {integrity: sha512-SMWlRBukG9KV8ZNjwemp2AzDibp/czIAeKKTw09nCPbWxVskIxactCJCGOp4y6I1hCMY7T7UGfySvBLXNeUbEw==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2127,8 +2127,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.3.2:
-    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2791,7 +2791,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@beequeue/eslint-plugin@4.0.1(eslint@8.57.0)(prettier@3.3.2)(typescript@5.5.3)':
+  '@beequeue/eslint-plugin@4.0.1(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.3)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       '@typescript-eslint/parser': 7.1.1(eslint@8.57.0)(typescript@5.5.3)
@@ -2802,12 +2802,12 @@ snapshots:
       eslint-plugin-import: eslint-plugin-i@2.29.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-n: 17.0.0-1(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.2)
+      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3)
       eslint-plugin-react: 7.34.0(eslint@8.57.0)
       eslint-plugin-unicorn: 51.0.1(eslint@8.57.0)
       eslint-plugin-vue: 9.22.0(eslint@8.57.0)
     optionalDependencies:
-      prettier: 3.3.2
+      prettier: 3.3.3
     transitivePeerDependencies:
       - '@types/eslint'
       - eslint-import-resolver-node
@@ -3269,7 +3269,7 @@ snapshots:
 
   '@tsconfig/node18@18.2.4': {}
 
-  '@types/aws-lambda@8.10.140': {}
+  '@types/aws-lambda@8.10.141': {}
 
   '@types/estree@1.0.5': {}
 
@@ -4080,10 +4080,10 @@ snapshots:
       minimatch: 9.0.3
       semver: 7.6.0
 
-  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.2):
+  eslint-plugin-prettier@5.1.3(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3):
     dependencies:
       eslint: 8.57.0
-      prettier: 3.3.2
+      prettier: 3.3.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
     optionalDependencies:
@@ -5052,7 +5052,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.3.2: {}
+  prettier@3.3.3: {}
 
   pretty-format@29.7.0:
     dependencies:
