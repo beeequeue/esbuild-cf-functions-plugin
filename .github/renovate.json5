@@ -1,5 +1,10 @@
 {
-  extends: ["config:js-app", "helpers:disableTypesNodeMajor", "schedule:earlyMondays", "group:allNonMajor"],
+  extends: [
+    "config:js-app",
+    "helpers:disableTypesNodeMajor",
+    "group:allNonMajor",
+    "schedule:monthly"
+  ],
   prHourlyLimit: 5,
   prConcurrentLimit: 5,
   branchConcurrentLimit: 5,
@@ -10,6 +15,10 @@
       matchUpdateTypes: ["patch", "minor"],
       matchManagers: ["npm"],
       automerge: true,
+    },
+    {
+      packagePatterns: ["lint", "!lint-staged"],
+      groupName: "Linting",
     },
     {
       matchManagers: ["terraform", "terraform-version"],
