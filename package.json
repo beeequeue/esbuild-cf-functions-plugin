@@ -68,7 +68,7 @@
     "@vitest/coverage-v8": "2.0.5",
     "dotenv": "16.4.5",
     "eslint": "8.57.0",
-    "lint-staged": "15.2.7",
+    "lint-staged": "15.2.9",
     "nanoid": "5.0.7",
     "prettier": "3.3.3",
     "simple-git-hooks": "2.11.1",
