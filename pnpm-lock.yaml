@@ -32,11 +32,11 @@ importers:
         specifier: 18.2.4
         version: 18.2.4
       '@types/node':
-        specifier: 20.14.13
-        version: 20.14.13
+        specifier: 20.16.2
+        version: 20.16.2
       '@vitest/coverage-v8':
         specifier: 2.0.5
-        version: 2.0.5(vitest@2.0.5(@types/node@20.14.13))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.2))
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
@@ -59,20 +59,20 @@ importers:
         specifier: 2.2.0
         version: 2.2.0
       tsup:
-        specifier: 8.2.3
-        version: 8.2.3(postcss@8.4.31)(typescript@5.5.4)(yaml@2.4.2)
+        specifier: 8.2.4
+        version: 8.2.4(postcss@8.4.31)(typescript@5.5.4)(yaml@2.4.2)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.13)
+        version: 2.0.5(@types/node@20.16.2)
 
   example:
     devDependencies:
       '@types/aws-lambda':
-        specifier: 8.10.142
-        version: 8.10.142
+        specifier: 8.10.145
+        version: 8.10.145
       esbuild-cf-functions-plugin:
         specifier: workspace:*
         version: link:..
@@ -655,8 +655,8 @@ packages:
   '@tsconfig/node18@18.2.4':
     resolution: {integrity: sha512-5xxU8vVs9/FNcvm3gE07fPbn9tl6tqGGWA9tSlwsUEkBxtRnTsNmwrV8gasZ9F/EobaSv9+nu8AxUKccw77JpQ==}
 
-  '@types/aws-lambda@8.10.142':
-    resolution: {integrity: sha512-wy2y/2hQKrS6myOS++koXg3N1Hg+LLyPjaggCFajczSHZPqBnOMuT2sdH3kiASrmdBYyM3pmjyz5SoWraRllCQ==}
+  '@types/aws-lambda@8.10.145':
+    resolution: {integrity: sha512-dtByW6WiFk5W5Jfgz1VM+YPA21xMXTuSFoLYIDY0L44jDLLflVPtZkYuu3/YxpGcvjzKFBZLU+GyKjR0HOYtyw==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -667,8 +667,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@20.14.13':
-    resolution: {integrity: sha512-+bHoGiZb8UiQ0+WEtmph2IWQCjIqg8MDZMAV+ppRRhUZnquF5mQkP/9vpSwJClEiSM/C7fZZExPzfU0vJTyp8w==}
+  '@types/node@20.16.2':
+    resolution: {integrity: sha512-91s/n4qUPV/wg8eE9KHYW1kouTfDk2FPGjXbBMfRWP/2vg1rCXNQL1OCabwGs0XSdukuK+MwCDXE30QpSeMUhQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2557,8 +2557,8 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  tsup@8.2.3:
-    resolution: {integrity: sha512-6YNT44oUfXRbZuSMNmN36GzwPPIlD2wBccY7looM2fkTcxkf2NEmwr3OZuDZoySklnrIG4hoEtzy8yUXYOqNcg==}
+  tsup@8.2.4:
+    resolution: {integrity: sha512-akpCPePnBnC/CXgRrcy72ZSntgIEUa1jN0oJbbvpALWKNOz1B7aM+UVDWGRGIO/T/PZugAESWDJUAb5FD48o8Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -2635,8 +2635,8 @@ packages:
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
@@ -3343,7 +3343,7 @@ snapshots:
 
   '@tsconfig/node18@18.2.4': {}
 
-  '@types/aws-lambda@8.10.142': {}
+  '@types/aws-lambda@8.10.145': {}
 
   '@types/estree@1.0.5': {}
 
@@ -3351,9 +3351,9 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@20.14.13':
+  '@types/node@20.16.2':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -3447,7 +3447,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.14.13))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.2))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3461,7 +3461,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.14.13)
+      vitest: 2.0.5(@types/node@20.16.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -5536,7 +5536,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.2.3(postcss@8.4.31)(typescript@5.5.4)(yaml@2.4.2):
+  tsup@8.2.4(postcss@8.4.31)(typescript@5.5.4)(yaml@2.4.2):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -5643,7 +5643,7 @@ snapshots:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
 
-  undici-types@5.26.5: {}
+  undici-types@6.19.8: {}
 
   universalify@0.1.2: {}
 
@@ -5664,13 +5664,13 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-node@2.0.5(@types/node@20.14.13):
+  vite-node@2.0.5(@types/node@20.16.2):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.0.2(@types/node@20.14.13)
+      vite: 5.0.2(@types/node@20.16.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5681,16 +5681,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.0.2(@types/node@20.14.13):
+  vite@5.0.2(@types/node@20.16.2):
     dependencies:
       esbuild: 0.19.7
       postcss: 8.4.31
       rollup: 4.19.0
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 20.16.2
       fsevents: 2.3.3
 
-  vitest@2.0.5(@types/node@20.14.13):
+  vitest@2.0.5(@types/node@20.16.2):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -5708,11 +5708,11 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.0.2(@types/node@20.14.13)
-      vite-node: 2.0.5(@types/node@20.14.13)
+      vite: 5.0.2(@types/node@20.16.2)
+      vite-node: 2.0.5(@types/node@20.16.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 20.16.2
     transitivePeerDependencies:
       - less
       - lightningcss
