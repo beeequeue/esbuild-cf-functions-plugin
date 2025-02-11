@@ -67,7 +67,7 @@
     "@types/node": "20.17.10",
     "@vitest/coverage-v8": "2.1.8",
     "dotenv": "16.4.7",
-    "eslint": "8.57.0",
+    "eslint": "9.20.1",
     "lint-staged": "15.2.9",
     "nanoid": "5.0.9",
     "prettier": "3.4.2",
