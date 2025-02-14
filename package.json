@@ -29,18 +29,18 @@
     "src",
     "dist"
   ],
-  "main": "./dist/plugin.js",
-  "module": "./dist/plugin.mjs",
+  "main": "./dist/plugin.cjs",
+  "module": "./dist/plugin.js",
   "types": "./dist/plugin.d.ts",
   "exports": {
     ".": {
       "require": {
-        "types": "./dist/plugin.d.ts",
-        "default": "./dist/plugin.js"
+        "types": "./dist/plugin.d.cts",
+        "default": "./dist/plugin.cjs"
       },
       "import": {
-        "types": "./dist/plugin.d.mts",
-        "default": "./dist/plugin.mjs"
+        "types": "./dist/plugin.d.ts",
+        "default": "./dist/plugin.js"
       }
     },
     "./package.json": "./package.json"
