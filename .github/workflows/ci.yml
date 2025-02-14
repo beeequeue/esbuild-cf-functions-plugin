@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 18
 
+      - run: npm i -g corepack
+
       - run: corepack enable
 
       - name: find pnpm cache path
@@ -45,6 +47,8 @@ jobs:
         with:
           node-version: 18
 
+      - run: npm i -g corepack
+
       - run: corepack enable
 
       - name: find pnpm cache path
@@ -72,6 +76,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - run: npm i -g corepack
 
       - run: corepack enable
 
@@ -106,6 +112,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - run: npm i -g corepack
 
       - run: corepack enable
 
