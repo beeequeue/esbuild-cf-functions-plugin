@@ -60,30 +60,37 @@
     "esbuild": ">=0.14.46"
   },
   "devDependencies": {
-    "@beequeue/eslint-plugin": "4.0.1",
+    "@antfu/eslint-config": "4.2.0",
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.11",
     "@tsconfig/node18": "18.2.4",
     "@types/node": "20.17.10",
     "@vitest/coverage-v8": "2.1.8",
     "dotenv": "16.4.7",
-    "eslint": "8.57.0",
-    "lint-staged": "15.2.9",
+    "eslint": "9.20.1",
+    "lint-staged": "15.4.3",
     "nanoid": "5.0.9",
-    "prettier": "3.4.2",
+    "prettier": "4.0.0-alpha.10",
     "simple-git-hooks": "2.11.1",
     "ts-dedent": "2.2.0",
     "tsup": "8.3.5",
-    "typescript": "5.7.2",
+    "typescript": "5.7.3",
     "vitest": "2.1.8"
   },
   "pnpm": {
     "overrides": {
-      "array-includes": "npm:@nolyfill/array-includes@latest",
-      "array.prototype.flat": "npm:@nolyfill/array.prototype.flat@latest",
-      "hasown": "npm:@nolyfill/hasown@latest",
-      "object.assign": "npm:@nolyfill/object.assign@latest",
-      "object.values": "npm:@nolyfill/object.values@latest"
+      "@eslint/markdown": "-",
+      "@stylistic/eslint-plugin": "-",
+      "eslint-plugin-jsonc": "-",
+      "eslint-plugin-toml": "-",
+      "eslint-plugin-vue": "-",
+      "eslint-processor-vue-blocks": "-",
+      "eslint-plugin-yml": "-",
+      "jsonc-eslint-parser": "-",
+      "toml-eslint-parser": "-",
+      "yaml-eslint-parser": "-",
+      "is-core-module": "npm:@nolyfill/is-core-module@^1",
+      "safer-buffer": "npm:@nolyfill/safer-buffer@^1"
     },
     "ignoredBuiltDependencies": [
       "simple-git-hooks"

@@ -1,5 +1,4 @@
-import { formatMessages, PartialMessage } from "esbuild"
-import type { Plugin } from "esbuild"
+import type { PartialMessage, Plugin } from "esbuild"
 
 // https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-javascript-runtime-features.html
 const supportedV1 = {
