@@ -20,7 +20,7 @@
     "bundler",
     "plugin"
   ],
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.4.0",
   "engines": {
     "node": ">=18"
   },
@@ -84,6 +84,12 @@
       "hasown": "npm:@nolyfill/hasown@latest",
       "object.assign": "npm:@nolyfill/object.assign@latest",
       "object.values": "npm:@nolyfill/object.values@latest"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "simple-git-hooks"
+    ],
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
