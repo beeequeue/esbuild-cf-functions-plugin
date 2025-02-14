@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 18
 
+      - run: npm i -g corepack
+
       - run: corepack enable
 
       - name: find pnpm cache path
@@ -33,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint --format compact
+      - run: pnpm lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -44,6 +46,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - run: npm i -g corepack
 
       - run: corepack enable
 
@@ -72,6 +76,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - run: npm i -g corepack
 
       - run: corepack enable
 
@@ -106,6 +112,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - run: npm i -g corepack
 
       - run: corepack enable
 

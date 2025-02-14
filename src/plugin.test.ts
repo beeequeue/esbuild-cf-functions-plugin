@@ -1,11 +1,12 @@
-import fs from "fs/promises"
-import { tmpdir } from "os"
-import path from "path"
+import { Buffer } from "node:buffer"
+import fs from "node:fs/promises"
+import { tmpdir } from "node:os"
+import path from "node:path"
 
-import { build, BuildOptions, BuildResult, OutputFile } from "esbuild"
+import { build, type BuildOptions, type BuildResult, type OutputFile } from "esbuild"
 import { nanoid } from "nanoid"
 import dedent from "ts-dedent"
-import { beforeEach, describe, expect, test, TestContext } from "vitest"
+import { beforeEach, describe, expect, it, type TestContext } from "vitest"
 
 import { CloudFrontFunctionsPlugin } from "./plugin"
 
@@ -20,7 +21,6 @@ ${Buffer.from(result.outputFiles[0].contents)
 `
 
 declare module "vitest" {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   export interface TestContext {
     tempDirPath: string
   }
@@ -55,7 +55,7 @@ const buildFile = async (
 
 describe("runtimeVersion 1", () => {
   describe("const, let, var", () => {
-    test("lets vars through", async (ctx) => {
+    it("lets vars through", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -68,7 +68,7 @@ describe("runtimeVersion 1", () => {
       expect(getOutput(result)).toMatchSnapshot()
     })
 
-    test("does not allow const", async (ctx) => {
+    it("does not allow const", async (ctx) => {
       const promise = buildFile(
         ctx,
         `
@@ -82,7 +82,7 @@ describe("runtimeVersion 1", () => {
       )
     })
 
-    test("does not allow let", async (ctx) => {
+    it("does not allow let", async (ctx) => {
       const promise = buildFile(
         ctx,
         `
@@ -97,7 +97,7 @@ describe("runtimeVersion 1", () => {
     })
   })
 
-  test("does not allow destructing", async (ctx) => {
+  it("does not allow destructing", async (ctx) => {
     const promise = buildFile(
       ctx,
       `
@@ -112,7 +112,7 @@ describe("runtimeVersion 1", () => {
     )
   })
 
-  test("allows exponent operator", async (ctx) => {
+  it("allows exponent operator", async (ctx) => {
     const result = await buildFile(
       ctx,
       `
@@ -125,7 +125,7 @@ describe("runtimeVersion 1", () => {
     expect(getOutput(result)).toMatchSnapshot()
   })
 
-  test("allows template strings", async (ctx) => {
+  it("allows template strings", async (ctx) => {
     const result = await buildFile(
       ctx,
       `
@@ -139,7 +139,7 @@ describe("runtimeVersion 1", () => {
   })
 
   describe("functions", () => {
-    test("allows arrow functions", async (ctx) => {
+    it("allows arrow functions", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -154,7 +154,7 @@ describe("runtimeVersion 1", () => {
       expect(getOutput(result)).toMatchSnapshot()
     })
 
-    test("allows spread parameters", async (ctx) => {
+    it("allows spread parameters", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -170,7 +170,7 @@ describe("runtimeVersion 1", () => {
     })
   })
 
-  test("does not modify supported functions", async (ctx) => {
+  it("does not modify supported string functions", async (ctx) => {
     const input = dedent`
       var foo = String.fromCodePoint(12);
       var foo = "bar".codePointAt(0);
@@ -193,7 +193,7 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify supported functions", async (ctx) => {
+  it("does not modify supported number functions", async (ctx) => {
     const input = dedent`
       var foo = Number.isFinite(10);
       var foo = Number.isInteger(10);
@@ -224,7 +224,7 @@ describe("runtimeVersion 1", () => {
   })
 
   describe("arrays", () => {
-    test("does not modify supported functions", async (ctx) => {
+    it("does not modify supported functions", async (ctx) => {
       const input = dedent`
         var foo = Array.of(1, 2, 3);
         var foo = [].copyWithin(10, 0, 2);
@@ -243,7 +243,7 @@ describe("runtimeVersion 1", () => {
       expect(output).toMatchSnapshot()
     })
 
-    test("does not modify supported typed arrays", async (ctx) => {
+    it("does not modify supported typed arrays", async (ctx) => {
       const input = dedent`
         var foo = new Int8Array([1, 2, 3]);
         var foo = new Uint8Array([1, 2, 3]);
@@ -274,7 +274,7 @@ describe("runtimeVersion 1", () => {
     })
   })
 
-  test("does not modify named capture groups", async (ctx) => {
+  it("does not modify named capture groups", async (ctx) => {
     const input = dedent`
       var regex = /(?<foo>.*+)/;
       var matches = regex.exec("Hello world");
@@ -289,7 +289,7 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify supported functions", async (ctx) => {
+  it("does not modify supported Promise functions", async (ctx) => {
     const input = dedent`
       new Promise((resolve, reject) => resolve());
       new Promise((resolve, reject) => reject());
@@ -307,7 +307,7 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not allow await/async", async (ctx) => {
+  it("does not allow await/async", async (ctx) => {
     const input = dedent`
       void (async () => {
         var func = async () => true
@@ -323,7 +323,7 @@ describe("runtimeVersion 1", () => {
     )
   })
 
-  test("does not modify crypto imports", async (ctx) => {
+  it("does not modify crypto imports", async (ctx) => {
     const input = dedent`
       import crypto from "crypto"
 
@@ -340,7 +340,7 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("minification does not rename handler function", async (ctx) => {
+  it("minification does not rename handler function", async (ctx) => {
     const input = dedent`
       function handler(event: Record<string, unknkown>) {
         console.log("test")
@@ -359,7 +359,7 @@ describe("runtimeVersion 1", () => {
 
 describe("runtimeVersion 2", () => {
   describe("const, let, var", () => {
-    test("lets vars through", async (ctx) => {
+    it("lets vars through", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -374,7 +374,7 @@ describe("runtimeVersion 2", () => {
       expect(getOutput(result)).toMatchSnapshot()
     })
 
-    test("lets const through", async (ctx) => {
+    it("lets const through", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -389,7 +389,7 @@ describe("runtimeVersion 2", () => {
       expect(getOutput(result)).toMatchSnapshot()
     })
 
-    test("lets let through", async (ctx) => {
+    it("lets let through", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -405,7 +405,7 @@ describe("runtimeVersion 2", () => {
     })
   })
 
-  test("does not allow destructing", async (ctx) => {
+  it("does not allow destructing", async (ctx) => {
     const promise = buildFile(
       ctx,
       `
@@ -422,7 +422,7 @@ describe("runtimeVersion 2", () => {
     )
   })
 
-  test("allows exponent operator", async (ctx) => {
+  it("allows exponent operator", async (ctx) => {
     const result = await buildFile(
       ctx,
       `
@@ -437,7 +437,7 @@ describe("runtimeVersion 2", () => {
     expect(getOutput(result)).toMatchSnapshot()
   })
 
-  test("allows template strings", async (ctx) => {
+  it("allows template strings", async (ctx) => {
     const result = await buildFile(
       ctx,
       `
@@ -453,7 +453,7 @@ describe("runtimeVersion 2", () => {
   })
 
   describe("functions", () => {
-    test("allows arrow functions", async (ctx) => {
+    it("allows arrow functions", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -470,7 +470,7 @@ describe("runtimeVersion 2", () => {
       expect(getOutput(result)).toMatchSnapshot()
     })
 
-    test("allows spread parameters", async (ctx) => {
+    it("allows spread parameters", async (ctx) => {
       const result = await buildFile(
         ctx,
         `
@@ -488,7 +488,7 @@ describe("runtimeVersion 2", () => {
     })
   })
 
-  test("does not modify supported functions", async (ctx) => {
+  it("does not modify supported string functions", async (ctx) => {
     const input = dedent`
       var foo = String.fromCodePoint(12);
       var foo = "bar".codePointAt(0);
@@ -511,7 +511,7 @@ describe("runtimeVersion 2", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify supported functions", async (ctx) => {
+  it("does not modify supported number functions", async (ctx) => {
     const input = dedent`
       var foo = Number.isFinite(10);
       var foo = Number.isInteger(10);
@@ -542,7 +542,7 @@ describe("runtimeVersion 2", () => {
   })
 
   describe("arrays", () => {
-    test("does not modify supported functions", async (ctx) => {
+    it("does not modify supported functions", async (ctx) => {
       const input = dedent`
         var foo = Array.of(1, 2, 3);
         var foo = [].copyWithin(10, 0, 2);
@@ -561,7 +561,7 @@ describe("runtimeVersion 2", () => {
       expect(output).toMatchSnapshot()
     })
 
-    test("does not modify supported typed arrays", async (ctx) => {
+    it("does not modify supported typed arrays", async (ctx) => {
       const input = dedent`
         var foo = new Int8Array([1, 2, 3]);
         var foo = new Uint8Array([1, 2, 3]);
@@ -592,7 +592,7 @@ describe("runtimeVersion 2", () => {
     })
   })
 
-  test("does not modify named capture groups", async (ctx) => {
+  it("does not modify named capture groups", async (ctx) => {
     const input = dedent`
       var regex = /(?<foo>.*+)/;
       var matches = regex.exec("Hello world");
@@ -607,7 +607,7 @@ describe("runtimeVersion 2", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify supported Promise functions", async (ctx) => {
+  it("does not modify supported Promise functions", async (ctx) => {
     const input = dedent`
       new Promise((resolve, reject) => resolve());
       new Promise((resolve, reject) => reject());
@@ -626,7 +626,7 @@ describe("runtimeVersion 2", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("allows await/async", async (ctx) => {
+  it("allows await/async", async (ctx) => {
     const input = dedent`
       void (async () => {
         var func = async () => true
@@ -640,7 +640,7 @@ describe("runtimeVersion 2", () => {
     expect(getOutput(result)).toMatchSnapshot()
   })
 
-  test("does not modify crypto imports", async (ctx) => {
+  it("does not modify crypto imports", async (ctx) => {
     const input = dedent`
       import crypto from "crypto"
 
@@ -657,7 +657,7 @@ describe("runtimeVersion 2", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify buffer imports", async (ctx) => {
+  it("does not modify buffer imports", async (ctx) => {
     const input = dedent`
       import buffer from "buffer"
 
@@ -672,7 +672,7 @@ describe("runtimeVersion 2", () => {
     const output = getOutput(result)
     expect(output).toMatchSnapshot()
   })
-  test("minification does not rename handler function", async (ctx) => {
+  it("minification does not rename handler function", async (ctx) => {
     const input = dedent`
       function handler(event: Record<string, unknkown>) {
         console.log("test")
@@ -688,7 +688,7 @@ describe("runtimeVersion 2", () => {
     expect(output).toMatchSnapshot()
   })
 
-  test("does not modify atob and btoa functions", async (ctx) => {
+  it("does not modify atob and btoa functions", async (ctx) => {
     const input = dedent`
       atob(btao("Hello World"));
     `
