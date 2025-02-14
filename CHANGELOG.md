@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 1.1.1
+
+### Patch Changes
+
+- [#205](https://github.com/beeequeue/esbuild-cf-functions-plugin/pull/205) [`3a8b5aa`](https://github.com/beeequeue/esbuild-cf-functions-plugin/commit/3a8b5aa6fb0bfbecec2e44602eb607a0cf663a20) Thanks [@beeequeue](https://github.com/beeequeue)! - Improved pkg.json `exports`
+
 ## 1.1.0
 
 ### Minor Changes
