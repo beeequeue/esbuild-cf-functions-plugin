@@ -52,6 +52,7 @@ export default antfu(
       "no-console": "off",
       "prefer-destructuring": "off",
       "unused-imports/no-unused-vars": "off",
+      "unicorn/prefer-node-protocol": "off",
     },
   },
 )
