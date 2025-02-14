@@ -6,8 +6,8 @@
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
   "repository": {
-    "type": "github",
-    "url": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin"
+    "type": "git",
+    "url": "https://github.com/beeequeue/esbuild-cf-functions-plugin.git"
   },
   "homepage": "https://github.com/BeeeQueue/esbuild-cf-functions-plugin",
   "keywords": [
