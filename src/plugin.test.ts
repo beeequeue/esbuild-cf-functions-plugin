@@ -170,7 +170,7 @@ describe("runtimeVersion 1", () => {
     })
   })
 
-  it("does not modify supported functions", async (ctx) => {
+  it("does not modify supported string functions", async (ctx) => {
     const input = dedent`
       var foo = String.fromCodePoint(12);
       var foo = "bar".codePointAt(0);
@@ -193,7 +193,7 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
-  it("does not modify supported functions", async (ctx) => {
+  it("does not modify supported number functions", async (ctx) => {
     const input = dedent`
       var foo = Number.isFinite(10);
       var foo = Number.isInteger(10);

@@ -80,22 +80,7 @@ new Promise((resolve, reject) => reject()).finally(console.log);
 "
 `;
 
-exports[`runtimeVersion 1 > does not modify supported functions 1`] = `
-"
-var foo = String.fromCodePoint(12);
-var foo = "bar".codePointAt(0);
-var foo = "bar".includes("ar");
-var foo = "bar".startsWith("ba");
-var foo = "bar".endsWith("ar");
-var foo = "bar".repeat(2);
-var foo = "bar".padStart(10);
-var foo = "bar".padEnd(10);
-var foo = "bar".trimStart();
-var foo = "bar".trimEnd();
-"
-`;
-
-exports[`runtimeVersion 1 > does not modify supported functions 2`] = `
+exports[`runtimeVersion 1 > does not modify supported number functions 1`] = `
 "
 var foo = Number.isFinite(10);
 var foo = Number.isInteger(10);
@@ -114,6 +99,21 @@ var foo = Number.POSITIVE_INFINITY;
 var foo = 10 .toExponential();
 var foo = 10 .toFixed();
 var foo = 10 .toPrecision(10);
+"
+`;
+
+exports[`runtimeVersion 1 > does not modify supported string functions 1`] = `
+"
+var foo = String.fromCodePoint(12);
+var foo = "bar".codePointAt(0);
+var foo = "bar".includes("ar");
+var foo = "bar".startsWith("ba");
+var foo = "bar".endsWith("ar");
+var foo = "bar".repeat(2);
+var foo = "bar".padStart(10);
+var foo = "bar".padEnd(10);
+var foo = "bar".trimStart();
+var foo = "bar".trimEnd();
 "
 `;
 
