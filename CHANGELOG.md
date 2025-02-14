@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 1.1.2
+
+### Patch Changes
+
+- [`0a9cc02`](https://github.com/beeequeue/esbuild-cf-functions-plugin/commit/0a9cc02ee68ea96dcf827df86e457fb8a3bfa9c8) Thanks [@beeequeue](https://github.com/beeequeue)! - Removed `src` from published package, added CHANGELOG.md
+
 ## 1.1.1
 
 ### Patch Changes
