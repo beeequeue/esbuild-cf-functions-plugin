@@ -23,26 +23,13 @@
   ],
   "packageManager": "pnpm@10.30.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19"
   },
   "files": [
-    "CHANGELOG.md",
     "dist"
   ],
-  "main": "./dist/plugin.cjs",
-  "module": "./dist/plugin.js",
-  "types": "./dist/plugin.d.ts",
   "exports": {
-    ".": {
-      "require": {
-        "types": "./dist/plugin.d.cts",
-        "default": "./dist/plugin.cjs"
-      },
-      "import": {
-        "types": "./dist/plugin.d.ts",
-        "default": "./dist/plugin.js"
-      }
-    },
+    ".": "./dist/plugin.js",
     "./package.json": "./package.json"
   },
   "simple-git-hooks": {
