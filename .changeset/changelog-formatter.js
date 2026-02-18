@@ -1,10 +1,10 @@
-const { default: baseFunctions } = require("@changesets/changelog-github")
+import baseFunctions from "@changesets/changelog-github"
 
 /*
  * This is just a small wrapper around the base changelog-github formatter that
  * removes "Thanks @Beeequeue!" as it would be on every changelog entry
  */
-exports.default = {
+export default {
   getDependencyReleaseLine: baseFunctions.getDependencyReleaseLine,
   getReleaseLine: async (...options) => {
     const line = await baseFunctions.getReleaseLine(...options)

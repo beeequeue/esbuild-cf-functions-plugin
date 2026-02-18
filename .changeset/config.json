@@ -1,9 +1,9 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@1.7.0/schema.json",
+  "$schema": "https://unpkg.com/@changesets/config@4.0.0-next.1/schema.json",
   "access": "public",
   "baseBranch": "main",
   "changelog": [
-    "./changelog-formatter.cjs",
+    "./.changeset/changelog-formatter.js",
     {
       "repo": "BeeeQueue/esbuild-cf-functions-plugin"
     }
