@@ -1,4 +1,5 @@
 import antfu from "@antfu/eslint-config"
+import e18e from "@e18e/eslint-plugin"
 
 export default antfu(
   {
@@ -7,36 +8,42 @@ export default antfu(
     stylistic: false,
     jsonc: false,
     jsx: false,
+    pnpm: false,
     toml: false,
-    yaml: false,
     test: { overrides: { "test/no-import-node-test": "off" } },
     typescript: {
       tsconfigPath: "tsconfig.json",
+      ignoresTypeAware: ["copy.ts", "*.config.*"],
+
       overrides: {
         "no-console": "off",
-        "ts/no-use-before-define": "off",
+        "antfu/no-top-level-await": "off",
+        "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+        "node/prefer-global/process": "off",
         "ts/consistent-type-definitions": "off",
-        "ts/consistent-type-imports": ["error", { fixStyle: "inline-type-imports" }],
+        "ts/consistent-type-imports": [
+          "error",
+          { fixStyle: "inline-type-imports", disallowTypeAnnotations: false },
+        ],
         "ts/no-unsafe-argument": "off",
         "ts/no-unsafe-assignment": "off",
-        "node/prefer-global/process": "off",
-        "antfu/no-top-level-await": "off",
-        "import/consistent-type-specifier-style": "off",
+        "ts/no-use-before-define": "off",
+        "unicorn/number-literal-case": "off",
+        "unused-imports/no-unused-vars": "off",
 
         "perfectionist/sort-imports": [
           "error",
           {
             type: "natural",
-            internalPattern: ["@/.+?", "~/.+?"],
-            newlinesBetween: "always",
+            internalPattern: ["^@/", "^~/", "^#[a-zA-Z0-9-]+/"],
+            newlinesBetween: 1,
             groups: [
-              ["builtin", "builtin-type"],
-              ["external", "external-type"],
-              ["internal", "internal-type"],
-              ["parent", "parent-type"],
-              ["sibling", "sibling-type"],
-              ["index", "index-type"],
-              "object",
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index",
               "unknown",
             ],
           },
@@ -44,6 +51,7 @@ export default antfu(
       },
     },
   },
+  e18e.configs!.recommended as never,
   {
     files: ["example/**"],
     rules: {
