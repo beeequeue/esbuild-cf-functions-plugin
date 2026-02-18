@@ -1,5 +1,11 @@
 # esbuild-cf-functions-plugin
 
+## 2.0.0
+
+### Major Changes
+
+- [`16b588f`](https://github.com/beeequeue/esbuild-cf-functions-plugin/commit/16b588f485efa03b9d4462e4d2ae4cca8b63ce02) Thanks [@beeequeue](https://github.com/beeequeue)! - Package is now ESM-only and requires Node 20.19+ to import with `require`
+
 ## 1.1.2
 
 ### Patch Changes
