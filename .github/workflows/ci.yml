@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: node --run build
+      - run: pnpm run build
 
   lint:
     runs-on: ubuntu-latest
@@ -70,7 +70,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: node --run lint
+      - run: pnpm run lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -99,7 +99,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: node --run typecheck
+      - run: pnpm run typecheck
 
   test:
     runs-on: ubuntu-latest
@@ -128,7 +128,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - run: node --run test
+      - run: pnpm run test
 
       - uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
