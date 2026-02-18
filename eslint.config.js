@@ -51,7 +51,7 @@ export default antfu(
       },
     },
   },
-  e18e.configs!.recommended as never,
+  e18e.configs.recommended,
   {
     files: ["example/**"],
     rules: {
