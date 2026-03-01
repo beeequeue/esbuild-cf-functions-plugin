@@ -57,7 +57,7 @@
     "@changesets/changelog-github": "1.0.0-next.1",
     "@changesets/cli": "3.0.0-next.1",
     "@e18e/eslint-plugin": "0.2.0",
-    "@tsconfig/node18": "18.2.6",
+    "@tsconfig/node20": "20.1.0",
     "@types/node": "22.19.13",
     "@vitest/coverage-v8": "4.0.18",
     "eslint": "10.0.0",
