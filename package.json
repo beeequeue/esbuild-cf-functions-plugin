@@ -2,7 +2,7 @@
   "name": "esbuild-cf-functions-plugin",
   "type": "module",
   "description": "A plugin to configure ESBuild for building code compatible with CloudFront Functions",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
   "repository": {
