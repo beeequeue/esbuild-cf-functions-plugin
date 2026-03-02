@@ -13,6 +13,9 @@ const supportedV1 = {
   "rest-argument": true,
   // ES 9 named capture groups are supported.
   "regexp-named-capture-groups": true,
+  // Cannot use `node:` prefixes
+  "node-colon-prefix-import": false,
+  "node-colon-prefix-require": false,
 }
 
 const supportedV2 = {

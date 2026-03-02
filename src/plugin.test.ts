@@ -340,6 +340,21 @@ describe("runtimeVersion 1", () => {
     expect(output).toMatchSnapshot()
   })
 
+  it("removes `node:` import prefixes", async (ctx) => {
+    const input = dedent`
+      import crypto from "node:crypto"
+
+      var hash = crypto.createHash("sha1")
+      hash.update("data")
+      hash.digest("base64")
+    `
+    const result = await buildFile(ctx, input)
+
+    const output = getOutput(result)
+    expect(output).not.toContain("node:")
+    expect(output).toContain('from "crypto"')
+  })
+
   it("minification does not rename handler function", async (ctx) => {
     const input = dedent`
       function handler(event: Record<string, unknkown>) {
@@ -672,6 +687,22 @@ describe("runtimeVersion 2", () => {
     const output = getOutput(result)
     expect(output).toMatchSnapshot()
   })
+
+  it("removes `node:` import prefixes", async (ctx) => {
+    const input = dedent`
+      import crypto from "node:crypto"
+
+      var hash = crypto.createHash("sha1")
+      hash.update("data")
+      hash.digest("base64")
+    `
+    const result = await buildFile(ctx, input)
+
+    const output = getOutput(result)
+    expect(output).not.toContain("node:")
+    expect(output).toContain('from "crypto"')
+  })
+
   it("minification does not rename handler function", async (ctx) => {
     const input = dedent`
       function handler(event: Record<string, unknkown>) {
