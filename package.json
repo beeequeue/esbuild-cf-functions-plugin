@@ -53,15 +53,15 @@
     "esbuild": ">=0.14.46"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "7.4.3",
+    "@antfu/eslint-config": "7.7.2",
     "@changesets/changelog-github": "1.0.0-next.1",
     "@changesets/cli": "3.0.0-next.1",
     "@e18e/eslint-plugin": "0.2.0",
     "@tsconfig/node18": "18.2.6",
     "@types/node": "22.19.13",
     "@vitest/coverage-v8": "4.0.18",
-    "eslint": "10.0.0",
-    "lint-staged": "16.2.7",
+    "eslint": "10.0.3",
+    "lint-staged": "16.4.0",
     "nanoid": "5.1.6",
     "prettier": "3.8.1",
     "simple-git-hooks": "2.13.1",
